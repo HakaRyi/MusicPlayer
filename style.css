@@ -29,15 +29,30 @@ body{
     justify-content: center;
     transform: translateX(-50%);
     z-index: 1;
-    background-color: bisque;
     box-shadow: 1px 1px 1px 1px rgb(188, 170, 170);
+    border-radius: 8px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.interface-container{
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    width: 500px;
+    background-color: grey;
+    opacity: 0.6;
     border-radius: 8px;
 }
 .playing-text{
+    z-index: 2;
+    font-weight: 600;
     color: red;
 }
 .music-name{
+    z-index: 2;
     font-size: 25px;
+    color: #fff;
     font-weight: 700;
 }
 .picture-container{
@@ -57,9 +72,12 @@ body{
     margin:auto;
 }
 .function-bar{
-    padding-top: 20px;
-    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    margin: 28px 0;
     text-align: center;
+    z-index: 2;
 }
 
 .progress-bar {
@@ -114,6 +132,9 @@ body{
     font-size: 25px;
     width: 50px;
 }
+.btn{
+    color: #fff;
+}
 .music-list{
     font-size: 12px;
     width: 502px;
@@ -146,6 +167,7 @@ body{
     min-height: 120px;
     position: relative;
     background-color: white;
+    transition: border-color 2s ease;
 }
 .option{
     display: inline-block;
@@ -171,3 +193,35 @@ body{
     bottom: 10px;
     cursor: pointer;
 }
+.song:active{
+    opacity: 0.8;
+}
+
+.listen{
+    border: 5px solid transparent;
+    transition: border-color 1s ease;
+    animation: spin 7s linear infinite;
+}
+
+
+@keyframes spin{
+    0%{
+        border-color:rgb(253, 103, 103);
+    }
+    20%{
+        border-color:rgb(255, 245, 110);
+    }
+    40%{
+        border-color:rgb(190, 255, 105);
+    }
+    60%{
+        border-color:rgb(104, 212, 252);
+    }
+    80%{
+        border-color:rgb(252, 120, 191);
+    }
+    100%{
+        border-color:rgb(252, 120, 120);
+    }
+}
+
